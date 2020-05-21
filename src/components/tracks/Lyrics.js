@@ -25,7 +25,7 @@ class Lyrics extends Component {
         );
       })
       .then((res) => {
-        //console.log(res.data);
+        console.log(res.data);
         this.setState({ track: res.data.message.body.track });
       })
       .catch((err) => console.log(err));
@@ -61,15 +61,23 @@ class Lyrics extends Component {
 
           <ul className='list-group mt-3'>
             <li className='list-group-item'>
-              <strong>Album Id:&nbsp;</strong>
+              <strong>Album Id:&nbsp;&nbsp;</strong>
               {track.album_id}
             </li>
             <li className='list-group-item'>
-              <strong>Song Genre:&nbsp;</strong>
+              <strong>Song Genre:&nbsp;&nbsp;</strong>
               {track.primary_genres.music_genre_list[0]
                 ? track.primary_genres.music_genre_list[0].music_genre
                     .music_genre_name
                 : 'N/A'}
+            </li>
+            <li className='list-group-item'>
+              <strong>Explicit Words:&nbsp;&nbsp;</strong>
+              {track.explicit === 0 ? 'No' : 'Yes'}
+            </li>
+            <li className='list-group-item'>
+              <strong>Updated Date:&nbsp;&nbsp;</strong>
+              {track.updated_time.substr(0, 10)}
             </li>
           </ul>
         </Fragment>
