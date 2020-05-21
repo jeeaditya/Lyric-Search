@@ -1,3 +1,7 @@
+\*\*About
+
+This is a React & Context API Web Application that can search Song Tracks and their Lyrics using Musixmatch API Service
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
